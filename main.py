@@ -32,13 +32,6 @@ class LinkedList:
             yield node.value
             node = node.next
 
-    def __contains__(self, other):
-        for value in self:
-            if value == other:
-                return True
-        else:
-            return False
-
     def __len__(self): return self._len
 
     def __reversed__(self):
