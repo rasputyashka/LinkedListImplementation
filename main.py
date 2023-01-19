@@ -2,7 +2,6 @@ from typing import Optional, Any
 
 
 class Node:
-
     def __init__(self, value) -> None:
         self.value: Any = value
         self.next: Optional[Node] = None
@@ -16,7 +15,6 @@ class Node:
 
 
 class LinkedList:
-
     def __init__(self, iterable=None) -> None:
         self.head: Optional[Node] = None
         self.tail: Optional[Node] = None
@@ -32,7 +30,8 @@ class LinkedList:
             yield node.value
             node = node.next
 
-    def __len__(self): return self._len
+    def __len__(self):
+        return self._len
 
     def __reversed__(self):
         node = self.tail
@@ -76,7 +75,7 @@ class LinkedList:
     def pop_left(self):
         node = self.head
         if self.head is None:
-            raise ValueError('cant pop from an empty linked list')
+            raise ValueError("cant pop from an empty linked list")
         if node is self.tail:
             self.next = self.tail = None
             self._len -= 1

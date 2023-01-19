@@ -12,7 +12,6 @@ from main import LinkedList
 
 
 class TestingLinkedList(unittest.TestCase):
-
     def test_init(self):
         letters = list(ascii_letters)
         shuffle(letters)
@@ -44,7 +43,10 @@ class TestingLinkedList(unittest.TestCase):
         letters = list(ascii_letters)
         for i in range(100):
             shuffle(letters)
-            self.assertEqual(list(LinkedList(letters))[::-1], list(reversed(LinkedList(letters))))
+            self.assertEqual(
+                list(LinkedList(letters))[::-1],
+                list(reversed(LinkedList(letters))),
+            )
 
     def test_getitem(self):
         letters = list(ascii_letters)
@@ -87,5 +89,5 @@ class TestingLinkedList(unittest.TestCase):
             del test_list[0]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
